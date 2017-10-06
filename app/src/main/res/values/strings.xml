@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">ConnectU</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Strings related to ConnectU -->
+    <string name="main_activity">ConnectU Activity</string>
+    <string name="tab_layout_activity">ConnectU Tab Activity</string>
+    <string name="map_activity">ConnectU Map Activity</string>
+    <string name="register_activity">Register New Account</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <!-- Strings related to login -->
+    <string-array name="driveoride">
+        <item>Drive</item>
+        <item>Ride</item>
+        <item>Inactive</item>
+    </string-array>
+
+    <!-- Strings related to sign-in -->
+    <string name="name_sign_in_activity">SignInActivity</string>
+    <string name="title_text">ConnectU Sign-In</string>
+    <string name="desc_google_icon">Google Logo</string>
+    <string name="signed_in_fmt">Signed in as: %s</string>
+    <string name="invalid_email_domain">Invalid email domain: %s</string>
+    <string name="loading">Loading…</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="signed_out">Signed out</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_1_fragment">Tab 1 Fragment</string>
+    <string name="tab_2_fragment">Tab 2 Fragment</string>
+    <string name="tab_4_fragment">Tab 4 Fragment</string>
+    <string name="tab_3_fragment">Tab 3 fragment</string>
+
+</resources>

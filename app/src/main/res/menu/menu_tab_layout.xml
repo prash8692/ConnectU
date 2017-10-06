@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.mamccartney.connectu.TabLayoutActivity">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/miDriver"
+            android:icon="@drawable/ic_directions_car_white_24dp"
+            android:orderInCategory="100"
+            android:title="Driver"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/miRider"
+            android:icon="@drawable/ic_person_white_24dp"
+            android:orderInCategory="101"
+            android:title="Rider"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/miInactive"
+            android:icon="@drawable/ic_menu_overflow_holo_dark"
+            android:orderInCategory="102"
+            android:title="Inactive"
+            app:showAsAction="never"/>
+    </group>
+
+</menu>

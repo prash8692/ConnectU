@@ -1,0 +1,77 @@
+
+Obsoleted files ---
+
+	LoginActivity.java 	/ activity_login.xml
+	MainActivity.java 	/ activity_main.xml
+	MapActivity.java	/ activity_map.xml
+	RegisterActivity.java	/ activity_register.xml
+	Tab1Fragment.java	/ fragment_tab1.xml
+	
+	Example DB code...
+		Employee*.java, SqlHelper.java
+	
+	Example Model/POJO code
+		Book.java, Car.java, Employee.java, 
+		RequestRide.java, Schedule.java
+
+Active files ---
+
+	User.java - POJO, per user information from SignIn/Profile
+	Ride.java - POJO, per ride information from Ride Setup
+
+	SignInActivity.java	/ activity_signin.xml
+	
+		activity_signin.xml
+			LinearLayout(v), id=main_layout
+				LinearLayout(v)
+					ImageView, id=google_icon
+					TextView, id=title_text
+					TextView, id=status
+					TextView, id=detail
+					Button, id=button_optional_action
+				RelativeLayout
+					com.google.android.gms.common.SignInButton, id=sign_in_button
+					LinearLayout(h), id=sign_out_and_disconnect
+						Button, id=sign_out_button
+						Button, id=disconnect_button
+						
+	TabLayoutActivity.java, TabPagerAdapter.java /
+		activity_tab_layout.xml, content_tab_layout.xml
+		
+		activity_tab_layout.xml
+			CoordinatorLayout
+				AppBarLayout
+					ToolBar, id=toolbar
+					TabLayout, id=tab_layout
+				ViewPager, id=pager
+				include content_tab_layout 
+
+		content_tab_layout.xml
+			CoordinatorLayout, id=content_tab_layout
+			
+
+	Tab2Fragment.java	/ fragment_tab2.xml
+		Tab2Fragment.java
+			callback TabLayoutActivity to get userApp
+			process user data
+	
+		fragment_tab2.xml
+			LinearLayout
+				TextView (many)
+				EdiText (many)
+				Button
+				
+	Tab3Fragment.java	/ fragment_tab3.xml
+		Tab3Fragment.java
+			callback TabLayoutActivity to get userApp
+			fragment manager to manage Google Map View
+			onReadyMap function to place icons
+		
+		fragment_tab3.xml
+			ConstraintLayout
+				fragment, id=mapView
+		
+	Tab4Fragment.java, UserListAdapter.java / fragment_tab4.xml, itemlistrow.xml
+		Tab4Fragment.java
+			
+		

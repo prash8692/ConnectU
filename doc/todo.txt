@@ -1,0 +1,156 @@
+
+Presenation / PowerPoint ==============================================
+
+	this list was pulled from one of the lectures
+	also see "how to present.pptx" from james 
+
+	Abstact / Summary
+	Design (uml/proto)
+	Development (ide/os/emulator/api/storage/ui/layout/extra)
+	Functionality (what was done)
+	Screenshots
+	Conclusions
+	
+	see doc/*.png for screenshots, login* and tab2* - I put bunch there!
+	
+	see below for design/development/functionality stuff
+
+	key 10-15 mins max - "One well-known formulation for PowerPoint 
+		presentations is the 10/20/30 rule. This rule dictates that you 
+		should use about ten slides for a twenty minute presentation, 
+		and each slide should utilize thirty point font. In other words, 
+		each slide should be about two minutes in length."
+		
+	so try for 8 slides to "talk" with others as backup?
+
+Activities ============================================================
+
+	- SignInActivity
+		- Google Signin, requires and uses google-service
+		- Enforces hawk.iit.edu or iit.edu email domain
+		- Will sign-in via IIT portal
+		- Supports Google's two-factor sign-in
+		- On successful signin, userApp account data is extracted (email, 
+			full, first, and last name) and passed to TabLayoutActivity
+		- Note: back from TabLayoutActivity will redisplay SignIn to logout.
+		
+		Extends AppCompatActivity
+		Implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener
+		GoogleSignInOptions.Builder
+		GoogleApiClient.Builder
+		Auth.GoogleSignInApi.silentSignIn
+		Auth.GoogleSignInApi.getSignInIntent
+		Auth.GoogleSignInApi.getSignInResultFromIntent
+		Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback
+		Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback
+			
+	- TabLayoutActivity & TabPagerAdapter
+		- Manages ToolBar, TabLayout, ViewPager, and OptionsMenu
+		- Retrieves userApp data, sets ToolBar title with user full name
+		- Sets icons for TabLayout in ToolBar
+		- ViewPager uses TabPagerAdapter to manage Fragments: Profile, Map and Ride.
+		- Options Menu/Items used to set user as: Driver, Rider or Inactive.
+		
+		- TODO: either in TabLayoutActivity or in Tab2Fragment, with retrieved 
+			userApp information from SignIn, check if existing in database:
+			yes - display map (tab3), no - display profile (tab2)
+			
+	- Tab2Fragment (Profile)
+		- either insert new user or validate existing user
+		- collect/check user information
+		- derive intital geolocation 
+		- user db management
+
+	- Tab3Fragment (Map)
+		- GoogleMap using SupportMapFragment
+		- List of users displayed Map
+
+		
+Fragments =============================================================
+
+	Note: renaming register activity as Profile (Tab2Fragment) --------
+	
+		hawk id
+		name (full/first/last from SignIn)
+		default pickup address
+		default destination address
+		contact
+			email (from SignIn)
+			phone(text)
+		
+		New (not in database) -> Save button
+		Existing (in database -> Update Button
+		
+		onButtonClick() -> update database and then...
+			-> to map screen?
+			-> to carpool setup/search? 
+			-> or no onClick() just let user navigate via tabs
+			
+		Notes & TODO: 
+			- redo using User Model/POJO and update Users POJO as needed
+			- rename DBHelper as UserDBHelper and use User
+			- move SQLite insert/update into new UserOperations
+			- Add utility function to compute LatLng from address
+			- Store pickup LatLng as User member.
+			- add utility function to determine if userApp is in database.
+			
+			
+	Note: map activity as Map (Tab3Fragment) --------------------------
+			
+		get/retrieve list of active users (drivers/riders)
+			- list based/limited on driver's starting/pickup location
+			- list already have user LatLng information
+			
+		populate icons on Google Map View
+			- driver icons (full/open)
+			- rider icons (need/have ride)
+			- mouse over icons shows name
+			
+		Note: driver/rider could have distinct icons for full/open
+			or just use same icon but set different color.
+			
+		Notes & TODO:
+			Most above icon items apply
+			given list - need to compute "center" from group of points for Map
+
+			
+	Note: Carpool activity as Ride (Tab4Fragment) ---------------------
+
+		carpool name
+		date picker (one time, recurring)
+		time picker
+		ride list (driver + rider(s))
+			full name
+			driver/rider icon
+			list all as inactive....
+			initial list based on Map user list
+
+		As driver
+			create new ride, date, time
+			cancel ride - send note to ride list
+			invite rider - note to rider
+			accept/decline rider - note to rider
+				- onAccept, note to ride list
+			remove rider - note to ride list
+			list only riders....
+
+		As rider
+			request join - send note to driver
+			accept/decline driver - send note to driver
+			cancel ride - send note to ride list
+			list only drivers....
+
+
+Model/Data ============================================================
+
+	Model/POJO
+		User
+		Ride
+
+	DB
+		basic CRUD for User, Ride
+		
+	Notification - stretch...
+	
+	Chat / Phone - stretch...
+		

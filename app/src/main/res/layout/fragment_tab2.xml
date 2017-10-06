@@ -1,0 +1,90 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout="@layout/fragment_tab2"
+    tools:context=".Tab2Fragment">
+
+    <View android:id="@+id/editInvisibleFocusHolder"
+              style="@style/InvisibleFocusHolder"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip">
+
+            <!-- Hawk A Number Label -->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Hawk A Number"
+                android:textColor="#372c24" />
+            <EditText android:id="@+id/anumber"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:maxLines="1"
+                android:layout_marginBottom="20dip"/>
+
+            <!-- Full Name Label -->
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:text="Full Name"/>
+            <EditText android:id="@+id/fullname"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="20dip"/>
+
+            <!-- Starting Address -->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Starting Address"
+                android:textColor="#372c24" />
+            <EditText android:id="@+id/startingadd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"/>
+
+            <!-- Phone Number -->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone Number"
+                android:textColor="#372c24" />
+            <EditText android:id="@+id/phoneno"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"/>
+
+            <!-- Drive Or Ride -->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Drive or Ride?"
+                android:textColor="#372c24" />
+            <Spinner android:id="@+id/boolean_spinner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Register Button -->
+            <Button android:id="@+id/btnRegister"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="Register New Account"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
